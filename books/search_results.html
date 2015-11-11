@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 29 17:40:06 2015
+
+@author: wuyifan
+"""
+
+<p>You searched for: <strong>{{ query }}</strong></p>
+{% if books %}
+    <p>Found {{ books|length }} book{{ books|pluralize }}:</p>
+    <ul>
+        {% for book in books %}
+        <li>《{{ book.Title }}》</li>
+        <td><a href="http://127.0.0.1:8090/delete/?p={{book.Title}}">删除</a></td>
+        <td><a href="http://127.0.0.1:8090/up/?q={{book.Title}}">更新</a></td>
+        <td><a href="http://127.0.0.1:8090/check/?k={{book.Title}}">详情</a></td>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books matched your search criteria.</p>
+{% endif %}
+<td><a href="http://127.0.0.1:8090/search-form/">返回</a></td>
