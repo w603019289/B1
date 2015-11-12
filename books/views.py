@@ -1,5 +1,4 @@
 from django.shortcuts import render_to_response
-import datetime
 from django.http import HttpResponse
 from books.models import book,Author
 # Create your views here.
